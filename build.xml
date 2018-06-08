@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<project name="Web_Application" basedir="." default="clean">
+        <property name="src.dir" value="src" />
+        <property name="web.dir" value="war" />
+        <property name="build.dir" value="${web.dir}/WEB-INF/classes" />
+        <property name="name" value="Java" />
+
+        <path id="master-classpath">
+                <fileset dir="lib">
+                        <include name="*.jar" />
+                </fileset>
+
+        <pathelement path="${build.src}" />
+        </path>
+
+        <target name="build" description="Compiling java classes">
+                <mkdir dir="${build.dir}" />
+                <javac destdir = "${build.dir}" >
+                <src path ="${src.dir}" />
+                <classpath refid = "master-classpath" />
+                </javac>
+                <echo> Compile Process Success</echo>
+        </target>
+        <target name="archive" depends="build" >
+
+                <jar destfile = "${basedir}/${ant.project.name}.jar" basedir="${build.dir}">
+                        <manifest>
+                                <attribute  name="Main-Class" value ="FirstApp" />
+                                <attribute  name="Class-Path" value =". lib/mysql-connector-java-5.1.45-bin.jar" />
+                        </manifest>
+                </jar>
+
+                <echo> JAR Created </echo>
+
+        </target>
+
+        <target name="clean" depends="archive">
+                <delete includeEmptyDirs="true">
+                <fileset dir="${web.dir}">
+                         <include name="**" />
+                </fileset>
+                </delete>
+                <echo> CLEAN COMPLETED </echo>
+        </target>
+
+</project>
