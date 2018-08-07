@@ -4,7 +4,8 @@ import java.sql.*;
 public class FirstApp {
         private static Scanner input;
         public static void main(String args[]) throws SQLException{
-                input = new Scanner(System.in);
+                System.out.println("Hello World");
+		input = new Scanner(System.in);
                 System.out.println("1.Register");
                 System.out.println("2.Login");
                 System.out.println("Enter A Number Corresponding To Your Option:");
