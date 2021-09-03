@@ -1,4 +1,3 @@
-//package com.netenrich;
 import java.sql.*;
 public class Register {
  private String first_name;
