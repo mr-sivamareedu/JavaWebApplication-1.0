@@ -1,4 +1,3 @@
-//package com.netenrich;
 
 public class DatabaseDetails {
         private String database_url = "jdbc:mysql://localhost:3306/test";
