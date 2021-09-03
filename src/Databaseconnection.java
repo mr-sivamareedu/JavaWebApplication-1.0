@@ -1,4 +1,3 @@
-//package com.netenrich;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
